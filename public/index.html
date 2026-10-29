@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0c3f60">
+  <meta name="description" content="Formação Bauer — Black Bauer Vitalícia. Finalize sua matrícula com Pix por R$ 197,70.">
+  <title>Checkout | Formação Bauer</title>
+  <link rel="icon" href="/assets/logo.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="offer-bar">Garanta seu acesso vitalício por <strong>R$ 197,70</strong></div>
+  <header class="banner"><img src="/assets/banner.png" alt="Matrículas abertas — Formação Bauer 3.0. Black Bauer Vitalícia. Paga uma vez. Acesso pra sempre."></header>
+  <main>
+    <section class="checkout" aria-label="Finalizar matrícula">
+      <div class="product">
+        <img class="product-logo" src="/assets/logo.png" alt="Formação Bauer" width="70" height="50">
+        <div class="product-info"><h1>FORMAÇÃO BAUER | BLACK BAUER VITALÍCIA</h1><p class="price">R$ 197,70</p></div>
+        <button class="details-toggle" type="button" aria-expanded="false" aria-controls="product-details">Detalhes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      </div>
+      <div id="product-details" class="product-details" hidden><p>Formação Bauer 3.0 — Black Bauer Vitalícia</p><div><span>Pagamento único via Pix</span><strong>R$ 197,70</strong></div></div>
+      <form id="checkout-form" novalidate>
+        <fieldset class="personal"><legend>Informações pessoais</legend>
+          <div class="input-group">
+            <label class="sr-only" for="email">Email</label><input id="email" name="email" type="email" placeholder="Email" autocomplete="email" maxlength="254" required aria-describedby="email-error"><span class="field-error" id="email-error" hidden></span>
+            <div class="phone-field"><span class="country" aria-label="Brasil"><img src="/assets/br.svg" width="22" height="16" alt=""> <span>⌄</span></span><label class="sr-only" for="phone">Telefone com DDD</label><input id="phone" name="phone" type="tel" inputmode="tel" placeholder="Telefone" autocomplete="tel-national" maxlength="16" required aria-describedby="phone-error"></div><span class="field-error" id="phone-error" hidden></span>
+            <label class="sr-only" for="name">Nome completo</label><input id="name" name="name" placeholder="Nome completo" autocomplete="name" maxlength="150" required aria-describedby="name-error"><span class="field-error" id="name-error" hidden></span>
+          </div>
+        </fieldset>
+        <fieldset class="payment"><legend>Método de pagamento</legend><div class="pix-option"><svg class="pix-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="m16 2 7 7-4 4a4 4 0 0 1-6 0L9 9Zm-9 9 4 4a7 7 0 0 0 10 0l4-4 5 5-5 5-4-4a7 7 0 0 0-10 0l-4 4-5-5Zm2 12 4-4a4 4 0 0 1 6 0l4 4-7 7Z"/></svg><span>Pix</span><span class="sr-only">selecionado</span></div></fieldset>
+        <div class="document-field"><label for="document">Documento</label><input id="document" name="document" inputmode="numeric" placeholder="CPF/CNPJ" autocomplete="off" maxlength="18" required aria-describedby="document-error"><span class="field-error" id="document-error" hidden></span></div>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+        <button id="generate-button" class="primary-button" type="submit"><span class="spinner" hidden></span><span id="generate-label">GERAR CÓDIGO QR</span></button>
+        <p class="secure"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></svg>Transação Segura e Criptografada</p>
+      </form>
+    </section>
+  </main>
+  <dialog id="pix-dialog" aria-labelledby="pix-title" aria-describedby="pix-description">
+    <button id="close-dialog" class="close-dialog" type="button" aria-label="Fechar janela">×</button>
+    <div class="modal-heading"><span class="modal-icon">✓</span><p>FALTA SÓ UM PASSO</p><h2 id="pix-title">Pague com Pix</h2><p id="pix-description">Escaneie o QR Code ou copie o código abaixo.</p><strong class="modal-price">R$ 197,70</strong></div>
+    <div id="payment-content"><img id="qr-image" class="qr-image" alt="QR Code para pagar R$ 197,70 via Pix" width="216" height="216" hidden><p id="expires" class="expires"></p><label class="copy-label" for="pix-code">Código Pix copia e cola</label><textarea id="pix-code" readonly rows="2" spellcheck="false"></textarea><button id="copy-button" class="primary-button" type="button">COPIAR CÓDIGO PIX</button><p id="copy-feedback" class="copy-feedback" role="status"></p><ol class="instructions"><li>Abra o aplicativo do seu banco e escolha Pix.</li><li>Selecione “Pix copia e cola” e cole o código.</li><li>Confira o valor e o recebedor antes de pagar.</li></ol></div>
+    <p id="payment-status" class="payment-status" role="status">Aguardando pagamento</p><button id="check-status" class="text-button" type="button">Já paguei, verificar pagamento</button>
+  </dialog>
+</body>
+</html>
