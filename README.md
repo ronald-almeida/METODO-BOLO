@@ -17,6 +17,8 @@ Sem a chave, a página abre normalmente e a geração de Pix informa indisponibi
 
 Use uma hospedagem com Node.js 22+, como um serviço web ou um container. Configure o comando de início `npm start`, a variável privada `BLACKCAT_API_KEY` e `APP_ORIGIN` com a URL HTTPS final. A porta é lida de `PORT` (padrão 3000). O `Dockerfile` também pode ser usado. Configure HTTPS no provedor.
 
+Na Vercel, use o preset **Node.js**, com `server.mjs` como entrada na raiz do projeto. Esse arquivo exporta o servidor HTTP para a plataforma e só abre uma porta diretamente na execução local. A Vercel recebe as variáveis privadas nas configurações do projeto; depois de alterá-las, faça um novo deploy.
+
 Este repositório inclui um backend: GitHub Pages ou uma hospedagem somente estática não executam a integração de pagamento. Nunca coloque a chave no HTML, JavaScript público, Dockerfile ou em arquivos versionados.
 
 ## Fluxo sem banco de dados

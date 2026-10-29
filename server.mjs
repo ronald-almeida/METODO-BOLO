@@ -45,7 +45,12 @@ export function createHandler({ key = process.env.BLACKCAT_API_KEY, origin = pro
   };
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+// Vercel imports this entrypoint instead of invoking it as a CLI program.
+// Export the HTTP server so its Node runtime can attach the request listener.
+const server = createServer(createHandler());
+export default server;
+
+if (!process.env.VERCEL && process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 3000);
-  createServer(createHandler()).listen(port, '0.0.0.0', () => console.log(`Checkout: http://localhost:${port}`));
+  server.listen(port, '0.0.0.0', () => console.log(`Checkout: http://localhost:${port}`));
 }
