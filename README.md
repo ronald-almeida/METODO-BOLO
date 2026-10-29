@@ -35,7 +35,7 @@ Este repositório inclui um backend: GitHub Pages ou uma hospedagem somente est�
 
 ## Aparência
 
-Banner e logo em `public/assets/`. Estilos em `public/styles.css`. A fonte provisória é Arial/Helvetica, pois o nome ou arquivo da fonte solicitada não veio na mensagem. O topo usa uma mensagem de oferta sem inventar um prazo de expiração comercial. O vencimento real do Pix vem da Black Cat.
+Banner e logo em `public/assets/`. Estilos em `public/styles.css`. A fonte usa a pilha informada: `ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`. O ícone Pix usa o SVG de 20 × 20 enviado como referência. O topo usa uma mensagem de oferta sem inventar um prazo de expiração comercial. O vencimento real do Pix vem da Black Cat.
 
 ## Verificar
 
